@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGA 2.0 - Acesso</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        /* Reset de margens e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo h2 {
+            color: #648fb9;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .tabs button.active {
+            background-color: #648fb9;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background-color: #648fb9;
+            color: #fff;
+            padding: 10px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #4a7fb4;
+        }
+
+        .extra-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .extra-links a {
+            color: #648fb9;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 450px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h2>Siga 2.0</h2>
+            <small>Feito por César Rodrigues e Anna Isabelle</small>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-target="#login-form">Login</button>
+            <button class="tab-btn" data-target="#cadastro-form">Cadastro</button>
+        </div>
+
+        <div id="login-form" class="form-container active">
+            <form>
+                <input type="text" placeholder="E-mail ou CPF" required>
+                <input type="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <div class="extra-links">
+                <a href="#">Esqueci minha senha</a>
+            </div>
+        </div>
+
+        <div id="cadastro-form" class="form-container">
+            <form>
+                <input type="text" placeholder="Nome Completo" required>
+                <input type="email" placeholder="E-mail" required>
+                <input type="text" placeholder="CPF" required>
+                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Confirme a Senha" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const formContainers = document.querySelectorAll('.form-container');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove a classe "active" de todos os botões
+                tabButtons.forEach(b => b.classList.remove('active'));
+                // Adiciona "active" ao botão clicado
+                btn.classList.add('active');
+
+                // Esconde todos os forms
+                formContainers.forEach(form => form.classList.remove('active'));
+
+                // Mostra o form alvo
+                const target = btn.getAttribute('data-target');
+                const targetForm = document.querySelector(target);
+                targetForm.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

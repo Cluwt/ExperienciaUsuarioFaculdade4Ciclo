@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Tela de Notas - Siga 2.0</title>
+    <style>
+        /* Reset de margens e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo da sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh; /* Faz a sidebar ocupar toda a altura da tela */
+            background: #648fb9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .menu {
+            list-style: none;
+            color: #fff;
+        }
+
+        .sidebar .menu li {
+            margin: 15px 0;
+        }
+
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #bdc3c7;
+            display: block;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar .menu li a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Estilo do conteúdo principal */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        header .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo da tabela de notas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #648fb9;
+            color: #ffffff;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        table tbody tr td:nth-child(7) {
+            font-weight: bold;
+        }
+
+        table tbody tr td:nth-child(7):not(:contains('Aprovado')) {
+            color: #e67e22; /* Laranja para "Recuperação" */
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .nota-detalhada {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .nota-detalhada h3 {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #648fb9;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        .sidebar .logo h2 {
+    color: #fff; /* Cor branca */
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Siga 2.0</h2>
+            <br>
+            <h5>Feito por César Rodrigues e Anna Isabelle</h5>
+        </div>
+        <ul class="menu">
+            <hr>
+            <br>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="/pages/notas.html">Notas</a></li>
+            <li><a href="/pages/matricula.html">Matrícula</a></li>
+            <li><a href="/pages/calendario.html">Calendário</a></li>
+            <li><a href="/pages/documentos.html">Documentos</a></li>
+            <li><a href="/pages/financeiro.html">Financeiro</a></li>
+            <li><a href="/pages/suporte.html">Suporte</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Notas - Siga 2.0</h1>
+            <div class="user-info">
+                <img src="/avatar.jpg" alt="Avatar do Usuário">
+                <span>César Rodrigues - Curso de TI</span>
+            </div>
+        </header>
+
+        <section class="notas">
+            <h2>Histórico de Notas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>1º Semestre</th>
+                        <th>2º Semestre</th>
+                        <th>3º Semestre</th>
+                        <th>4º Semestre</th>
+                        <th>Média Final</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estatística Aplicada</td>
+                        <td>8.5</td>
+                        <td>9.0</td>
+                        <td>7.5</td>
+                        <td>8.0</td>
+                        <td>8.25</td>
+                        <td>Aprovado</td>
+                    </tr>
+                    <tr>
+                        <td>Algoritmo e Lógica</td>
+                        <td>7.0</td>
+                        <td>6.5</td>
+                        <td>8.0</td>
+                        <td>7.5</td>
+                        <td>7.25</td>
+                        <td>Aprovado</td>
+                    </tr>
+                    <tr>
+                        <td>Banco de Dados</td>
+                        <td>6.5</td>
+                        <td>7.0</td>
+                        <td>5.5</td>
+                        <td>6.0</td>
+                        <td>6.25</td>
+                        <td>Recuperação</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="notas-detalhes">
+            <h2>Detalhes das Notas</h2>
+            <div class="nota-detalhada">
+                <h3>Estatística Aplicada</h3>
+                <p><strong>Média Final:</strong> 8.25</p>
+                <p><strong>Situação:</strong> Aprovado</p>
+                <p><strong>Observação:</strong> A disciplina apresenta bons conceitos de estatística com aplicação em áreas de TI, sendo fundamental para análise de dados.</p>
+            </div>
+            <div class="nota-detalhada">
+                <h3>Algoritmo e Lógica de Programação</h3>
+                <p><strong>Média Final:</strong> 7.25</p>
+                <p><strong>Situação:</strong> Aprovado</p>
+                <p><strong>Observação:</strong> Importante para o aprendizado de lógica computacional e desenvolvimento de algoritmos eficientes em programação.</p>
+            </div>
+            <div class="nota-detalhada">
+                <h3>Banco de Dados</h3>
+                <p><strong>Média Final:</strong> 6.25</p>
+                <p><strong>Situação:</strong> Recuperação</p>
+                <p><strong>Observação:</strong> Necessário um reforço no conteúdo de bancos de dados relacionais, especialmente em SQL e modelagem de dados.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Feito por Anna Isabelle e César Rodrigues</p>
+        </footer>
+    </div>
+</body>
+</html>

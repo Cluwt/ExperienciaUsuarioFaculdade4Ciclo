@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Matricula - Siga 2.0</title>
+    <style>
+        /* Reset de margens e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo da sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh; /* Faz a sidebar ocupar toda a altura da tela */
+            background: #648fb9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .menu {
+            list-style: none;
+            color: #fff;
+        }
+
+        .sidebar .menu li {
+            margin: 15px 0;
+        }
+
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #bdc3c7;
+            display: block;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar .menu li a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Estilo do conteúdo principal */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        header .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo do formulário */
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-container input[type="date"] {
+            padding-left: 12px;
+        }
+
+        .form-container button {
+            background-color: #648fb9;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #4f79a1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #648fb9;
+            color: #fff;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Siga 2.0</h2>
+            <br>
+            <h5>Feito por César Rodrigues e Anna Isabelle</h5>
+        </div>
+        <ul class="menu">
+            <hr>
+            <br>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="/pages/notas.html">Notas</a></li>
+            <li><a href="/pages/matricula.html">Matrícula</a></li>
+            <li><a href="/pages/calendario.html">Calendário</a></li>
+            <li><a href="/pages/documentos.html">Documentos</a></li>
+            <li><a href="/pages/financeiro.html">Financeiro</a></li>
+            <li><a href="/pages/suporte.html">Suporte</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Matricula - Siga 2.0</h1>
+            <div class="user-info">
+                <img src="/avatar.jpg" alt="Avatar do Usuário">
+                <span>César Rodrigues - Curso de TI</span>
+            </div>
+        </header>
+
+        <section class="form-container">
+            <h2>Formulário de Matrícula</h2>
+            <form action="#" method="POST">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso" required>
+                    <option value="ti">Tecnologia da Informação</option>
+                    <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+                    <option value="redes">Redes de Computadores</option>
+                </select>
+
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+
+                <button type="submit">Realizar Matrícula</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>Feito por Anna Isabelle e César Rodrigues</p>
+        </footer>
+    </div>
+</body>
+</html>

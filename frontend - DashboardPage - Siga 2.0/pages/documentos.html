@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos - Siga 2.0</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        /* Reset de margens e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Estilo da sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh; /* Faz a sidebar ocupar toda a altura da tela */
+            background: #648fb9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .menu {
+            list-style: none;
+            color: #fff;
+        }
+
+        .sidebar .menu li {
+            margin: 15px 0;
+        }
+
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #bdc3c7;
+            display: block;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar .menu li a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Estilo do conteúdo principal */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        header .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo da seção de documentos */
+        .documents-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .documents-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .document-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .document-list li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .document-list li a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .document-list li a:hover {
+            text-decoration: underline;
+        }
+
+        .upload-section {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .upload-section input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        .upload-section button {
+            background-color: #648fb9;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-section button:hover {
+            background-color: #4a7fb4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #648fb9;
+            color: #fff;
+            margin-top: auto; /* empurra o footer para o final da tela */
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Siga 2.0</h2>
+            <br>
+            <h5>Feito por César Rodrigues e Anna Isabelle</h5>
+        </div>
+        <ul class="menu">
+            <hr>
+            <br>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="/pages/notas.html">Notas</a></li>
+            <li><a href="/pages/matricula.html">Matrícula</a></li>
+            <li><a href="/pages/calendario.html">Calendário</a></li>
+            <li><a href="/pages/documentos.html">Documentos</a></li>
+            <li><a href="/pages/financeiro.html">Financeiro</a></li>
+            <li><a href="/pages/suporte.html">Suporte</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Documentos - Siga 2.0</h1>
+            <div class="user-info">
+                <img src="/avatar.jpg" alt="Avatar do Usuário">
+                <span>César Rodrigues - Curso de TI</span>
+            </div>
+        </header>
+
+        <section class="documents-section">
+            <h2>Documentos Disponíveis</h2>
+            <ul class="document-list">
+                <li>
+                    <span>Guia de Estudo de Algoritmos</span>
+                    <a href="/documentos/guia_algoritmos.pdf" download>Baixar</a>
+                </li>
+                <li>
+                    <span>Programa de Estudo de Redes de Computadores</span>
+                    <a href="/documentos/estudo_redes.pdf" download>Baixar</a>
+                </li>
+                <li>
+                    <span>Calendário de Avaliações - 2024</span>
+                    <a href="/documentos/calendario_avaliacoes.pdf" download>Baixar</a>
+                </li>
+                <li>
+                    <span>Relatório de Estágio Curricular - TI</span>
+                    <a href="/documentos/relatorio_estagio.pdf" download>Baixar</a>
+                </li>
+                <li>
+                    <span>Manual de Laboratório de TI</span>
+                    <a href="/documentos/manual_laboratorio.pdf" download>Baixar</a>
+                </li>
+            </ul>
+
+            <h2>Upload de Documentos</h2>
+            <div class="upload-section">
+                <p>Se você é um professor ou coordenador, use o formulário abaixo para enviar novos documentos para o portal:</p>
+                <form>
+                    <input type="file" name="documento" id="documento">
+                    <input type="text" placeholder="Título do Documento" required>
+                    <textarea placeholder="Descrição do Documento" required></textarea>
+                    <button type="submit">Enviar Documento</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Siga 2.0 - Todos os direitos reservados</p>
+        </footer>
+    </div>
+</body>
+</html>

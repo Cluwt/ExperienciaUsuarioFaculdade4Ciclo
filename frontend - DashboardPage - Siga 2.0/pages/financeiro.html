@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro - Siga 2.0</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        /* Reset de margens e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilo da sidebar */
+        .sidebar {
+            width: 250px;
+            height: 100vh; /* Faz a sidebar ocupar toda a altura da tela */
+            background: #648fb9;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .menu {
+            list-style: none;
+            color: #fff;
+        }
+
+        .sidebar .menu li {
+            margin: 15px 0;
+        }
+
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #bdc3c7;
+            display: block;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar .menu li a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Estilo do conteúdo principal */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        header .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo da seção financeira */
+        .financeiro-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .financeiro-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .cards-financeiro {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card-financeiro {
+            background: #f9f9f9;
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .card-financeiro h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card-financeiro p {
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        /* Estilo da tabela de histórico */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #648fb9;
+            color: #ffffff;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+
+        /* Formulário de atualização de dados de cobrança */
+        .atualizar-dados-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .atualizar-dados-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .atualizar-dados-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .atualizar-dados-section form input, 
+        .atualizar-dados-section form select, 
+        .atualizar-dados-section form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .atualizar-dados-section form button {
+            background-color: #648fb9;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .atualizar-dados-section form button:hover {
+            background-color: #4a7fb4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #648fb9;
+            color: #fff;
+            margin-top: auto; /* empurra o footer para o fim da tela */
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h2>Siga 2.0</h2>
+            <br>
+            <h5>Feito por César Rodrigues e Anna Isabelle</h5>
+        </div>
+        <ul class="menu">
+            <hr>
+            <br>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="/pages/notas.html">Notas</a></li>
+            <li><a href="/pages/matricula.html">Matrícula</a></li>
+            <li><a href="/pages/calendario.html">Calendário</a></li>
+            <li><a href="/pages/documentos.html">Documentos</a></li>
+            <li><a href="/pages/financeiro.html">Financeiro</a></li>
+            <li><a href="/pages/suporte.html">Suporte</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h1>Financeiro - Siga 2.0</h1>
+            <div class="user-info">
+                <img src="/avatar.jpg" alt="Avatar do Usuário">
+                <span>César Rodrigues - Curso de TI</span>
+            </div>
+        </header>
+
+        <section class="financeiro-section">
+            <h2>Resumo Financeiro</h2>
+            <div class="cards-financeiro">
+                <div class="card-financeiro">
+                    <h3>Mensalidade Atual</h3>
+                    <p><strong>Valor:</strong> R$ 800,00</p>
+                    <p><strong>Data de Vencimento:</strong> 10/12/2024</p>
+                    <p><strong>Status:</strong> Pendente</p>
+                </div>
+                <div class="card-financeiro">
+                    <h3>Saldo Devedor</h3>
+                    <p>R$ 800,00</p>
+                </div>
+                <div class="card-financeiro">
+                    <h3>Próximas Mensalidades</h3>
+                    <p><strong>Janeiro/2025:</strong> R$ 800,00 (10/01/2025)</p>
+                    <p><strong>Fevereiro/2025:</strong> R$ 800,00 (10/02/2025)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="financeiro-section">
+            <h2>Histórico de Pagamentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mês/Ano</th>
+                        <th>Valor</th>
+                        <th>Data de Pagamento</th>
+                        <th>Forma de Pagamento</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Novembro/2024</td>
+                        <td>R$ 800,00</td>
+                        <td>10/11/2024</td>
+                        <td>Cartão de Crédito</td>
+                        <td>Pago</td>
+                    </tr>
+                    <tr>
+                        <td>Outubro/2024</td>
+                        <td>R$ 800,00</td>
+                        <td>10/10/2024</td>
+                        <td>Boleto Bancário</td>
+                        <td>Pago</td>
+                    </tr>
+                    <tr>
+                        <td>Setembro/2024</td>
+                        <td>R$ 800,00</td>
+                        <td>15/09/2024</td>
+                        <td>Boleto Bancário</td>
+                        <td>Atrasado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="atualizar-dados-section">
+            <h2>Atualizar Dados de Cobrança</h2>
+            <form>
+                <input type="text" placeholder="Nome completo" required>
+                <input type="email" placeholder="E-mail para envio de boletos" required>
+                <input type="text" placeholder="CPF" required>
+                <input type="text" placeholder="Endereço" required>
+                <select required>
+                    <option value="" disabled selected>Forma de Pagamento Preferencial</option>
+                    <option value="boleto">Boleto Bancário</option>
+                    <option value="cartao">Cartão de Crédito</option>
+                    <option value="debito">Cartão de Débito</option>
+                    <option value="pix">PIX</option>
+                </select>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>Feito por Anna Isabelle e César Rodrigues</p>
+        </footer>
+    </div>
+</body>
+</html>
